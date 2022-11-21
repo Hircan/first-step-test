@@ -11,7 +11,7 @@ function TestHeader() {
         <>
             <Navbar bg="light" expand={"md"} className="mb-3">
                 <Container fluid>
-                    <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+                    <Navbar.Brand href="#">Logo</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Offcanvas id={`offcanvasNavbar-expand-md`} aria-labelledby={`offcanvasNavbarLabel-expand-md`} placement="end">
                         <Offcanvas.Header closeButton>
@@ -19,19 +19,22 @@ function TestHeader() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link href="#action1">Home</Nav.Link>
-                                <Nav.Link href="#action2">Link</Nav.Link>
-                                <NavDropdown title="Dropdown" id={`offcanvasNavbarDropdown-expand-md`}>
-                                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-                                </NavDropdown>
+                                <Nav.Link href="#action1" className="d-flex">
+                                    <span className="material-icons align-self-center me-2">send</span>공지사항
+                                </Nav.Link>
+                                <Nav.Link href="#action2" className="d-flex">
+                                    <span className="material-icons me-2">help_outline</span>&#9;FAQ
+                                </Nav.Link>
+                                <Nav.Link href="#action3" className="d-flex">
+                                    <span className="material-icons me-2">wifi_calling_3</span>&#9;고객센터
+                                </Nav.Link>
+                                <Nav.Link href="#action4" className="d-flex">
+                                    <span className="material-icons me-2">shield</span>&#9;개인정보처리방침
+                                </Nav.Link>
+                                <Nav.Link href="#action5" className="d-flex">
+                                    <span className="material-icons me-2">edit</span>&#9;이용약관
+                                </Nav.Link>
                             </Nav>
-                            <Form className="d-flex">
-                                <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
-                                <Button variant="outline-success">Search</Button>
-                            </Form>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>

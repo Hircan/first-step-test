@@ -32,7 +32,13 @@ function TestBottom() {
     ]);
     const clickHandler = (id) => {
         setClickList(clickList.map((data) => (data.id === id ? { ...data, clicked: true } : { ...data, clicked: false })));
+        id === 3 && handleShow();
     };
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <>
@@ -48,39 +54,13 @@ function TestBottom() {
                         {data.text}
                     </span>
                 ))}
-                {/* <span
-                    className="material-icons p-3 w-100 text-center"
-                    onClick={(i) => {
-                        clickHandler(0);
-                    }}
-                >
-                    home
-                </span>
-                <span
-                    className="material-icons px-3 w-100 text-center"
-                    onClick={(i) => {
-                        clickHandler(1);
-                    }}
-                >
-                    search
-                </span>
-                <span
-                    className="material-icons px-3 w-100 text-center"
-                    onClick={(i) => {
-                        clickHandler(2);
-                    }}
-                >
-                    perm_identity
-                </span>
-                <span
-                    className="material-icons px-3 w-100 text-center"
-                    onClick={(i) => {
-                        clickHandler(3);
-                    }}
-                >
-                    notifications_none
-                </span> */}
             </Navbar>
+            <Offcanvas show={show} onHide={handleClose} {...props}>
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.</Offcanvas.Body>
+            </Offcanvas>
         </>
     );
 }
