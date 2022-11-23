@@ -1,5 +1,6 @@
 import Banner from "./Banner";
 import { Filter } from "../Common/Dropbox";
+import { Payment } from "../../../Util/Pay";
 
 const contentData = [
     {
@@ -114,17 +115,21 @@ const Contents = () => {
                     </div>
                 </section>
             ))}
+            <Payment />
         </>
     );
 };
 
 const TestContent = () => {
     return (
-        <>
+        <div style={{ paddingBottom: "150px" }}>
             <Banner />
             <Filter />
             <Contents />
-        </>
+            <button className="bg-white rounded-5 position-fixed" style={{ right: "50px", bottom: "100px" }}>
+                <span>+</span>
+            </button>
+        </div>
     );
 };
 
