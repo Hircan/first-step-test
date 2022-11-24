@@ -1,6 +1,6 @@
 import Banner from "./Banner";
 import { Filter } from "../Common/Dropboxs";
-import { Payment } from "../../../Util/Pay";
+// import { Payment } from "../../../Util/Pay";
 
 const contentData = [
     {
@@ -115,12 +115,12 @@ const Contents = () => {
                     </div>
                 </section>
             ))}
-            <Payment />
+            {/* <Payment /> */}
         </>
     );
 };
 
-const TestContent = () => {
+const HomeContent = () => {
     return (
         <div style={{ paddingBottom: "150px" }}>
             <Banner />
@@ -133,4 +133,4 @@ const TestContent = () => {
     );
 };
 
-export default TestContent;
+export default HomeContent;

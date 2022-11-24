@@ -1,14 +1,13 @@
-import TestBottom from "./Component/View/Mobile/TestBottom";
-import TestHeader from "./Component/View/Mobile/TestHeader";
 import "./App.css";
-import TestContent from "./Component/View/Mobile/TestContent";
+import Display from "./Component/View/Display/Display";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
     return (
         <div className="App">
-            <TestHeader />
-            <TestContent />
-            <TestBottom />
+            <Router>
+                <Display />
+            </Router>
         </div>
     );
 }
