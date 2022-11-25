@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import { Filter } from "../Common/Dropboxs";
-// import { Payment } from "../../../Util/Pay";
+import Certification from "../../../Util/Certification";
+import CryptoJS from "crypto-js";
 
 const contentData = [
     {
@@ -119,13 +120,57 @@ const Contents = () => {
         </>
     );
 };
+const SMSApiTest = () => {
+    var user_phone_number = "010-2414-7762"; //수신 전화번호 기입
+    var resultCode = 404;
+    const date = Date.now().toString();
+    const uri = "ncp:sms:kr:296737339859:sms_send_test"; //서비스 ID
+    const secretKey = "6I1KmeE1eQ2LAmNQ0VuS7AdLEEMCY2QbnVQNF50U"; // Secret Key
+    const accessKey = "KLVEMmAUVTF0GHvYVnuS"; //Access Key
 
+    const method = "POST";
+    const space = " ";
+    const newLine = "\n";
+    const url = `https://sens.apigw.ntruss.com/sms/v2/services/${uri}/messages`;
+    const url2 = `/sms/v2/services/${uri}/messages`;
+
+    const hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, secretKey);
+    hmac.update(method);
+    hmac.update(space);
+    hmac.update(url2);
+    hmac.update(newLine);
+    hmac.update(date);
+    hmac.update(newLine);
+    hmac.update(accessKey);
+
+    const hash = hmac.finalize();
+    const signature = hash.toString(CryptoJS.enc.Base64);
+
+    fetch(`https://sens.apigw.ntruss.com/sms/v2/services/${uri}/messages`, {
+        method: "POST",
+        headers: {
+            "Contenc-type": "application/json; charset=utf-8",
+            "x-ncp-iam-access-key": accessKey,
+            "x-ncp-apigw-timestamp": date,
+            "x-ncp-apigw-signature-v2": signature,
+        },
+        body: {
+            type: "SMS",
+            countryCode: "82",
+            from: "010-2414-7762",
+            content: "인증번호 [123456]입니다.",
+            messages: [{ to: `${user_phone_number}` }],
+        },
+    }).then((response) => console.log(response));
+};
 const HomeContent = () => {
     return (
         <div style={{ paddingBottom: "150px" }}>
             <Banner />
             <Filter />
             <Contents />
+            <Certification />
+            <button onClick={SMSApiTest}>전송테스트</button>
             <button className="bg-white rounded-5 position-fixed" style={{ right: "50px", bottom: "100px" }}>
                 <span>+</span>
             </button>
