@@ -1,6 +1,6 @@
 import Banner from "./Banner";
-import { Filter } from "../Common/Dropboxs";
-import Certification from "../../../Util/Certification";
+import { Filter } from "../../Common/Dropboxs";
+import Certification from "../../../../Util/Certification";
 import CryptoJS from "crypto-js";
 
 const contentData = [
