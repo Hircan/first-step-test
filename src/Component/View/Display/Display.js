@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import HomeMobile from "../Mobile/Home/Home";
-import HomePC from "../PC/Home/Home";
+import HomeMobile from "../Domain/Mobile/Home/Home";
+import HomePC from "../Domain/PC/Home/Home";
 import { useEffect, useState } from "react";
 import { debounce } from "lodash";
 
