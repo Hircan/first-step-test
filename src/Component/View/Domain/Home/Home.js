@@ -1,5 +1,5 @@
-import { HeaderMobile, HeaderPC } from "../Common/Header";
-import Footer from "../Common/Footer";
+import { HeaderMobile, HeaderPC } from "../../Common/Header";
+import Footer from "../../Common/Footer";
 import HomeContent from "./HomeContent";
 import { useEffect, useState } from "react";
 import { debounce } from "lodash";

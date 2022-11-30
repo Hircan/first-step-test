@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link, useNavigate } from "react-router-dom";
 
 function Footer() {
     const [clickList, setClickList] = useState([
@@ -30,9 +31,12 @@ function Footer() {
             clicked: false,
         },
     ]);
+    const navigate = useNavigate();
     const clickHandler = (id) => {
         setClickList(clickList.map((data) => (data.id === id ? { ...data, clicked: true } : { ...data, clicked: false })));
         id === 2 && handleShow();
+        id === 4 && navigate("/MyPage", { replace: true });
+        id === 1 && navigate("/", { replace: true });
     };
     const handleShow = () => setShow(true);
     const [show, setShow] = useState(false);
