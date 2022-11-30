@@ -2,6 +2,8 @@ import Banner from "./Banner";
 import { Filter } from "../../Common/Dropboxs";
 import Certification from "../../../../Util/Certification";
 import CryptoJS from "crypto-js";
+import { InputText } from "../../Common/InputBoxes";
+import ButtonSmall from "../../Common/Buttons/ButtonSmall";
 
 const contentData = [
     {
@@ -174,6 +176,13 @@ const HomeContent = () => {
             <button className="bg-white rounded-5 position-fixed" style={{ right: "50px", bottom: "100px" }}>
                 <span>+</span>
             </button>
+            <div>
+                <InputText>
+                    <InputText.Label>테스트</InputText.Label>
+                    <InputText.Input placeholder="테스트" color="blue" />
+                </InputText>
+            </div>
+            <ButtonSmall className="p-2">asdf</ButtonSmall>
         </div>
     );
 };

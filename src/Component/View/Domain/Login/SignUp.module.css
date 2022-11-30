@@ -1,0 +1,5 @@
+.passwordView {
+    right: 1rem;
+    position: absolute;
+    user-select: none;
+}

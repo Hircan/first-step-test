@@ -3,14 +3,15 @@ const request = require("request");
 const app = express();
 const CryptoJS = require("crypto-js");
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-    res.send(send_message());
+app.get("/SMSAuth", (req, res) => {
+    res.send(send_message(req.query.phone));
+    console.log("호출됨");
 });
 
-function send_message() {
-    var user_phone_number = "01024147762"; //수신 전화번호 기입
+function send_message(phone) {
+    var user_phone_number = phone; //수신 전화번호 기입
     var resultCode = 404;
     const date = Date.now().toString();
     const uri = "ncp:sms:kr:296737339859:sms_send_test"; //서비스 ID

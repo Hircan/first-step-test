@@ -4,6 +4,10 @@ import Home from "../Domain/Home/Home";
 import { useEffect, useState } from "react";
 import { debounce } from "lodash";
 import { MyPage } from "../Domain/MyPage/MyPage";
+import SignUp from "../Domain/Login/SignUp";
+import SMSAuth from "../Domain/Login/SMSAuth";
+import SignIn from "../Domain/Login/SignIn";
+import SignUpAdd1 from "../Domain/Login/SignUpAdd1";
 
 function Display() {
     const [windowSize, setWindowSize] = useState({
@@ -39,6 +43,10 @@ function Display() {
                         <Route exact path="/MyPage" element={<MyPage />} />
                     </>
                 )}
+                <Route exact path="/signin" element={<SignIn />} />
+                <Route exact path="/signup" element={<SignUp />} />
+                <Route exact path="/SMSAuth" element={<SMSAuth />} />
+                <Route exact path="/signupadd1" element={<SignUpAdd1 />} />
             </Routes>
         </>
     );
