@@ -102,7 +102,7 @@ const Contents = () => {
             {contentData.map((data) => (
                 <section className="p-2" key={data.id}>
                     <picture>
-                        <source media="all" srcset={data.image} />
+                        <source media="all" srcSet={data.image} />
                         <img src="/logo192.png" alt="section 이미지" width="100%" height="300px" loading="lazy" />
                     </picture>
 

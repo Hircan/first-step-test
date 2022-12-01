@@ -8,6 +8,7 @@ import SignUp from "../Domain/Login/SignUp";
 import SMSAuth from "../Domain/Login/SMSAuth";
 import SignIn from "../Domain/Login/SignIn";
 import SignUpAdd1 from "../Domain/Login/SignUpAdd1";
+import Components from "../Domain/Components/Components";
 
 function Display() {
     const [windowSize, setWindowSize] = useState({
@@ -47,6 +48,7 @@ function Display() {
                 <Route exact path="/signup" element={<SignUp />} />
                 <Route exact path="/SMSAuth" element={<SMSAuth />} />
                 <Route exact path="/signupadd1" element={<SignUpAdd1 />} />
+                <Route exact path="/Components" element={<Components />} />
             </Routes>
         </>
     );

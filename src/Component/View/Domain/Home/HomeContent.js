@@ -3,7 +3,10 @@ import { Filter } from "../../Common/Dropboxs";
 import Certification from "../../../../Util/Certification";
 import CryptoJS from "crypto-js";
 import { InputText } from "../../Common/InputBoxes";
-import ButtonSmall from "../../Common/Buttons/ButtonSmall";
+import { H4 } from "../../Common/Typography";
+import Floatting from "../../Common/Buttons/Floatting";
+import HotProfile from "./HotProfile";
+import ProfileCard from "./ProfileCard";
 
 const contentData = [
     {
@@ -105,7 +108,7 @@ const Contents = () => {
             {contentData.map((data) => (
                 <section className="p-2" key={data.id}>
                     <picture>
-                        <source media="all" srcset={data.image} />
+                        <source media="all" srcSet={data.image} />
                         <img src="/logo192.png" alt="section 이미지" width="100%" height="300px" loading="lazy" />
                     </picture>
 
@@ -169,20 +172,10 @@ const HomeContent = () => {
     return (
         <div style={{ paddingBottom: "150px" }}>
             <Banner />
-            <Filter />
-            <Contents />
-            <Certification />
-            <button onClick={SMSApiTest}>전송테스트</button>
-            <button className="bg-white rounded-5 position-fixed" style={{ right: "50px", bottom: "100px" }}>
-                <span>+</span>
-            </button>
-            <div>
-                <InputText>
-                    <InputText.Label>테스트</InputText.Label>
-                    <InputText.Input placeholder="테스트" color="blue" />
-                </InputText>
-            </div>
-            <ButtonSmall className="p-2">asdf</ButtonSmall>
+            <H4>멘티의 첫걸음으로!</H4>
+            <HotProfile />
+            <ProfileCard />
+            <Floatting />
         </div>
     );
 };
