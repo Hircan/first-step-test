@@ -170,9 +170,9 @@ const SMSApiTest = () => {
 };
 const HomeContent = () => {
     return (
-        <div style={{ paddingBottom: "150px" }}>
+        <div style={{ paddingTop: "52px", paddingBottom: "150px" }}>
             <Banner />
-            <H4>멘티의 첫걸음으로!</H4>
+
             <HotProfile />
             <ProfileCard />
             <Floatting />

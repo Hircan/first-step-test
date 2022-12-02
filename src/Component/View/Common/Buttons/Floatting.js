@@ -9,6 +9,7 @@ const StyleBtn = styled.button`
     position: fixed;
     right: 30px;
     bottom: 70px;
+    z-index: 9999;
     color: ${(props) => props.color || "#FFFFFF"};
     background: ${(props) => props.background || palettes.black[0]};
 `;

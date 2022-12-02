@@ -1,0 +1,11 @@
+.img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+.subject {
+    align-self: start;
+}
+.title {
+    text-align: start;
+}

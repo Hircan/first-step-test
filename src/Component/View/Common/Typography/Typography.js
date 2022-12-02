@@ -36,30 +36,34 @@ const StyleH6 = styled.h6`
     font-weight: 400;
 `;
 
-export const Span = ({ children }) => {
-    return <StyleSpan>{children}</StyleSpan>;
+export const Span = (props) => {
+    return <StyleSpan {...props}>{props.children}</StyleSpan>;
 };
 
-export const H1 = ({ children }) => {
-    return <StyleH1>{children}</StyleH1>;
+export const H1 = (props) => {
+    return <StyleH1 {...props}>{props.children}</StyleH1>;
 };
 
-export const H2 = ({ children }) => {
-    return <StyleH2>{children}</StyleH2>;
+export const H2 = (props) => {
+    return <StyleH2 {...props}>{props.children}</StyleH2>;
 };
 
-export const H3 = ({ children }) => {
-    return <StyleH3>{children}</StyleH3>;
+export const H3 = (props) => {
+    return <StyleH3 {...props}>{props.children}</StyleH3>;
 };
 
-export const H4 = ({ children }) => {
-    return <StyleH4>{children}</StyleH4>;
+export const H4 = (props) => {
+    return (
+        <StyleH4 {...props} className="red">
+            {props.children}
+        </StyleH4>
+    );
 };
 
-export const H5 = ({ children }) => {
-    return <StyleH5>{children}</StyleH5>;
+export const H5 = (props) => {
+    return <StyleH5 {...props}>{props.children}</StyleH5>;
 };
 
-export const H6 = ({ children }) => {
-    return <StyleH6>{children}</StyleH6>;
+export const H6 = (props) => {
+    return <StyleH6 {...props}>{props.children}</StyleH6>;
 };

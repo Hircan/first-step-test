@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { H4 } from "../../Common/Typography";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,6 +17,7 @@ import profileData from "./profileData";
 export default function HotProfile() {
     return (
         <>
+            <H4>멘티의 첫걸음으로!</H4>
             <Swiper
                 slidesPerView={"auto"}
                 spaceBetween={30}

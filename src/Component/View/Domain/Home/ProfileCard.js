@@ -1,16 +1,19 @@
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import { H4, Span } from "../../Common/Typography";
 import profileData from "./profileData";
+import style from "./ProfileCard.module.css";
 
 export default function ProfileCard() {
     return (
         <>
             {profileData.map((user) => (
-                <>
-                    <img src={user.image} data-src={"/images/icons/Asset 4@3x 1.png"} loading="lazy" width="200px" height="200px" />
-                    <H4>{user.subject}</H4>
-                    <Span>{user.title}</Span>
-                </>
+                <Container className="text-center">
+                    <div>
+                        <img src={user.image} data-src={"/images/icons/Asset 4@3x 1.png"} loading="lazy" className={style.img} />
+                        <H4 className={style.subject}>{user.subject}</H4>
+                        <Span className={style.title}>{user.title}</Span>
+                    </div>
+                </Container>
             ))}
         </>
     );
