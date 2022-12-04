@@ -1,3 +1,5 @@
+import { Nav } from "react-bootstrap";
+
 const OffcanvasBody = () => {
     return (
         <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -19,3 +21,5 @@ const OffcanvasBody = () => {
         </Nav>
     );
 };
+
+export default OffcanvasBody;

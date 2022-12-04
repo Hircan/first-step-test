@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import OffcanvasHeader from "./OffcanvasHeader";
 import OffcanvasBody from "./OffcanvasBody";
 
-const OffcanvasSearch = ({ name, ...props }) => {
+const OffcanvasSearch = ({ name, onShow, ...props }) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
+    useEffect(() => setShow(onShow), [onShow]);
     return (
         <>
-            <Button variant="primary" onClick={handleShow} className="me-2">
+            {/* <Button variant="primary" onClick={handleShow} className="me-2">
                 {name}
-            </Button>
+            </Button> */}
             <Offcanvas show={show} onHide={handleClose} {...props}>
                 <Offcanvas.Header closeButton>
                     <OffcanvasHeader />
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <OffcanvasBody />{" "}
+                    <OffcanvasBody />
                 </Offcanvas.Body>
             </Offcanvas>
         </>

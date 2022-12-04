@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Container, Navbar, Nav, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "./svg/Logo";
 import SearchIcon from "./svg/SearchIcon";
 import ToggleIcon from "./svg/ToggleIcon";
 import style from "./common.module.css";
+import OffcanvasSearch from "offcanvas/offcanvasSearch/OffcanvasSearch";
 export const HeaderMobile = (props) => {
+    const [show, setShow] = useState(false);
+    console.log("show " + show);
     return (
         <>
             <Navbar bg="white" expand={"md"} className={style.header}>
@@ -12,10 +16,11 @@ export const HeaderMobile = (props) => {
                     <Navbar.Brand href="#">
                         <Logo />
                     </Navbar.Brand>
-                    <Nav className="ms-auto">
-                        <Link to="/">
+                    <Nav className="ms-auto" onClick={setShow}>
+                        {/* <Link to="/">
                             <SearchIcon color="black" />
-                        </Link>
+                        </Link> */}
+                        <SearchIcon color="black" />
                     </Nav>
                     <Navbar.Toggle className={style.toggle}>
                         <ToggleIcon fill="black" />
@@ -46,6 +51,7 @@ export const HeaderMobile = (props) => {
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
+            <OffcanvasSearch onShow={show} />
         </>
     );
 };
