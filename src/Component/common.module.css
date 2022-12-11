@@ -1,0 +1,15 @@
+.header {
+    width: 100%;
+    top: 0;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+}
+
+.toggle {
+    border: none !important;
+}
+
+.toggle:focus {
+    box-shadow: none !important;
+}
